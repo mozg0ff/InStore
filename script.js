@@ -20,11 +20,15 @@ copyMenu();
 //show mobail menu
 const menuButton = document.querySelector('.trigger'),
     closeButton = document.querySelector('.t-close'),
+    closeButtonn = document.querySelector('.overlay'),
     addclass = document.querySelector('.site');
 menuButton.addEventListener('click', function(){
     addclass.classList.toggle('showmenu')
 })
 closeButton.addEventListener('click', function(){
+    addclass.classList.remove('showmenu')
+})
+closeButtonn.addEventListener('click', function(){
     addclass.classList.remove('showmenu')
 })
 

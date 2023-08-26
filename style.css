@@ -203,6 +203,11 @@ span{
     flex-shrink: 0;
     overflow: hidden;
 }
+.products-man .media-man {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
 
 .prinary-button, .secondary-button, .light-button{
     font-size: var(--font-small);
@@ -235,6 +240,12 @@ span{
     color: var(--white-color);
 }
 .view-all{
+    font-size: var(--font-small);
+    display: flex;
+    gap: 1em;
+    transition: var(--trans-color);
+}
+.view-all-man {
     font-size: var(--font-small);
     display: flex;
     gap: 1em;
@@ -386,6 +397,14 @@ nav .fly-item,
 .mega .flexcol{
     flex: 1;
     min-height: 180px;
+    padding-right: 5.5em;
+    margin-bottom: 1.5em;
+    z-index: 1;
+}
+    /* mega menu-man */
+.mega-man .flexcol-man {
+    flex: 1;
+    min-width: 180px;
     padding-right: 5.5em;
     margin-bottom: 1.5em;
     z-index: 1;
@@ -613,6 +632,20 @@ form.search button:hover{
     overflow: hidden;
     transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
+.off-canvas .has-child-man > :where(ul, .mega-man) {
+    font-size: var(--font-small);
+    font-weight: var(--fw3);
+    line-height: 28px;
+    padding-left: 3em;
+
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.off-canvas .expand > :where(ul, .mega-man){
+    max-height: 5000px;
+}
 .off-canvas .expand > :where(ul, .mega){
     max-height: 5000px;
 }
@@ -633,7 +666,17 @@ form.search button:hover{
 .off-canvas nav .mega .products{
     display: none;
 }
+.off-canvas nav .mega-man{
+    padding: 0;
+}
+.off-canvas nav .mega-man .products{
+    display: none;
+}
 .off-canvas .has-child .icon-small{
+    padding: 0.5em;
+    line-height: initial;
+}
+.off-canvas .has-child-man .icon-small{
     padding: 0.5em;
     line-height: initial;
 }
@@ -641,6 +684,9 @@ form.search button:hover{
     transform: rotate(90deg);
 }
 .off-canvas .has-child{
+    width: var(--percent100);
+}
+.off-canvas .has-child-man{
     width: var(--percent100);
 }
 .off-canvas .thetop-nav .right > ul > :where(:nth-child(4), li:nth-child(5)) > a{
@@ -2379,6 +2425,77 @@ input[type="range"]::-webkit-slider-thumb {
 
         display: none;
     }
+    /* mega menu-man */
+    nav .mega-man{
+        position: absolute;
+        width: var(--percent100);
+        height: auto;
+        top: auto;
+        left: 0;
+        right: 0;
+        padding: 2.5em;
+        line-height: 2em;
+        background-color: var(--light-bg-color);
+        box-shadow: rgb(0 0 0 / 20%) 0 30px 20px -30px;
+        z-index: 100;
+
+        display: none;
+    }
+    nav li.has-child-man:hover .mega-man {
+        display: block;
+    }
+
+    nav .mega-man .wrapper-man {
+        display: flex;
+    }
+    nav .mega-man h4 {
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+    nav .mega-man ul {
+        font-size: var(--font-small);
+    }
+    nav .mega-man .man-brands {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 180px;
+    }
+    nav .mega-man .man-brands li {
+        min-width: 80px;
+    }
+    nav .mega-man .view-all-man {
+        margin-top: 1em;
+    }
+    nav .mega-man .products-man {
+        flex: 2;
+        padding: 0;
+        align-items: center;
+        position: relative;
+    }
+    nav .mega-man .products-man .row-man {
+        width: var(--percent100);
+    }
+    nav .mega-man .products-man .media-man {
+        height: 400px;
+    }
+    nav .mega-man .products-man .text-content-man {
+        line-height: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        margin-top: 0.5em;
+        position: absolute;
+        bottom: 12em;
+        width: var(--percent100);
+    }
+    nav .mega-man .products-man .text-content-man h4 {
+        font-size: 1.3em;
+        font-weight: var(--fw8);
+        text-align: center;
+        color: var(--secondary-dark-color);
+    }
+/* --------------------------- */
 
     nav li.has-child:hover .mega{
         display: block;
